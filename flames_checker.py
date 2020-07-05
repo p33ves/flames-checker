@@ -3,10 +3,6 @@ from collections import OrderedDict
 
 
 def get_name(name: str) -> list:
-    """ temp = list(name.lower())
-    for char in temp:
-        if char not in set(string.ascii_lowercase):
-            temp.remove(char) """
     return [char for char in name.lower() if char in set(string.ascii_lowercase)]
 
 
