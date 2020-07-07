@@ -20,6 +20,7 @@ def show_flames(token: int):
     letters.update([('F', False), ('L', False), ('A', False),
                     ('M', False), ('E', False), ('S', False)])
     display = " F L A M E S "
+    result = list()
     counter = 0
     while True:
         for key, val in letters.items():
@@ -29,12 +30,11 @@ def show_flames(token: int):
                     if counter == token:
                         letters[key] = None
                         display = display.replace(key, '\u0336' + key)
-                        print(display)
+                        result.append(display)
                         counter = 0
             else:
                 letters[key] = True
-                print(f"You got {key}")
-                return
+                return f"You got {key}"
 
 
 def check_last(map: dict, this: str) -> bool:
@@ -44,10 +44,10 @@ def check_last(map: dict, this: str) -> bool:
     return True
 
 
-if __name__ == "__main__":
-    input1 = input("Enter first person's name:")
+def checker(input1: str, input2: str) -> str:
+    """ input1 = input("Enter first person's name:")
+    input2 = input("Enter second person's name:")"""
     name1 = get_name(input1)
-    input2 = input("Enter second person's name:")
     name2 = get_name(input2)
     count = get_count(name1, name2)
-    show_flames(count)
+    return show_flames(count)
