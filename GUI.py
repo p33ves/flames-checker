@@ -1,9 +1,13 @@
 import tkinter as tk
+import tkinter.font as tkFont
 import flames_checker
 
+#normal_font = tkFont.Font(family="Helvetica", size=12, overstrike=0)
+#strike_font = tkFont.Font(family="Helvetica", size=12, overstrike=1)
 window = tk.Tk()
 welcome = tk.Label(window, text="Check Flames!")
 welcome.grid(row=0, column=1)
+welcome.config(font=("Times New Roman", 16, "bold"))
 
 
 name1_label = tk.Label(window, text="Enter name of person1:")
